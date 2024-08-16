@@ -23,8 +23,9 @@ import mx.com.pixir.ejemplo.presentation.screens.home.components.HomeTopBar
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun HomeScreen(navController: NavHostController = rememberNavController()) {
-
+fun HomeScreen(
+    navController: NavHostController = rememberNavController()
+) {
     val screens = listOf(ExampleRoutes.Home, ExampleRoutes.Search)
     val drawerState: DrawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val snackbarHostState = remember { SnackbarHostState() }

@@ -7,7 +7,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import androidx.navigation.navDeepLink
 import androidx.navigation.navigation
+import mx.com.pixir.ejemplo.presentation.screens.home.HomeScreen
 import mx.com.pixir.ejemplo.presentation.screens.menu.MenuScreen
 import mx.com.pixir.ejemplo.presentation.screens.menu2.Menu2Screen
 
@@ -40,6 +42,6 @@ sealed class DrawerRoutes(
         icon = Icons.Rounded.Info,
         desc = "info icon",
         title = "Menu 2",
-        route = "About"
+        route = "about"
     )
 }

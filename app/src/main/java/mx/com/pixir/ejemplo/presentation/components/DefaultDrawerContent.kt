@@ -117,7 +117,7 @@ fun MenuDrawer(
                     click = { route ->
                         onCloseDrawer()
 
-                        navController.popBackStack(route = Graph.EXAMPLE, inclusive = true)
+                        navController.popBackStack(route = Graph.DRAWER, inclusive = true)
 
                         navController.navigate(route)
                     }

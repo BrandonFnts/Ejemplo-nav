@@ -11,13 +11,12 @@ import mx.com.pixir.ejemplo.presentation.screens.home.HomeScreen
 @Composable
 fun RootNavGraph(
     navController: NavHostController,
-    startDestination: String = Graph.EXAMPLE,
     activity: MainActivity,
     parentPaddingValues: PaddingValues
 ) {
     NavHost(
         navController = navController,
-        startDestination = startDestination,
+        startDestination = Graph.HOME,
         route = Graph.ROOT
     ) {
         drawerNavGraph(navController = navController)

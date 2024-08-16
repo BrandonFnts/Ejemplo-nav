@@ -28,9 +28,11 @@ fun ExampleNavGraph(navController: NavHostController, parentPaddingValues: Paddi
             Example2Screen(navController = navController)
         }
 
-        composable(route = Graph.HOST) {
+        composable(route = Graph.HOME) {
             HomeScreen()
         }
+
+        drawerNavGraph(navController = navController)
     }
 }
 

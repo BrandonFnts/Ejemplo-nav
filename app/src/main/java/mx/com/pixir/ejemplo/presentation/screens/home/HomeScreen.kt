@@ -1,6 +1,9 @@
 package mx.com.pixir.ejemplo.presentation.screens.home
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalNavigationDrawer
@@ -9,8 +12,10 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.CoroutineScope
@@ -34,14 +39,20 @@ fun HomeScreen(
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            DefaultDrawerContent(
-                navController = navController,
-                onCloseDrawer = {
-                    coroutineScope.launch {
-                        drawerState.close()
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth(0.8f)
+                    .fillMaxHeight()
+            ) {
+                DefaultDrawerContent(
+                    navController = navController,
+                    onCloseDrawer = {
+                        coroutineScope.launch {
+                            drawerState.close()
+                        }
                     }
-                }
-            )
+                )
+            }
         },
         gesturesEnabled = true
     ) {

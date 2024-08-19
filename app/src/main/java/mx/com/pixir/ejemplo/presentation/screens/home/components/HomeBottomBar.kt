@@ -27,12 +27,10 @@ fun HomeBottomBar(navController: NavHostController, screens: List<ExampleRoutes>
     val currentDestination = navBackStackEntry?.destination ?: return
     val bottomBarDestination = screens.any { it.route == currentDestination.route }
 
-    val backgroundColor: Color = MaterialTheme.colorScheme.background
-
     if (bottomBarDestination) {
 
         NavigationBar(
-            containerColor = backgroundColor
+            containerColor = MaterialTheme.colorScheme.primary
         ) {
 
             screens.forEach { screen ->

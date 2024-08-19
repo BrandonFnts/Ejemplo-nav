@@ -1,13 +1,7 @@
 package mx.com.pixir.ejemplo.presentation.components
 
-import androidx.compose.animation.animateColor
-import androidx.compose.animation.core.RepeatMode
-import androidx.compose.animation.core.infiniteRepeatable
-import androidx.compose.animation.core.rememberInfiniteTransition
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -16,19 +10,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Icon
-import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -47,7 +36,7 @@ fun DefaultDrawerContent(
     )
 
     Box(
-        modifier = modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize().background(color = MaterialTheme.colorScheme.background)
     ) {
 
         Column(modifier = modifier.fillMaxSize()) {
@@ -86,8 +75,8 @@ fun HeaderDrawer(modifier: Modifier) {
         Column(Modifier.padding(16.dp)) {
             DefaultText(
                 modifier = Modifier,
-                text = "Aqui puede ir un diseño de imagen",
-                color = MaterialTheme.colorScheme.primary,
+                text = "Aqui puede ir un diseño de imagen o de perfil de usuario",
+                color = MaterialTheme.colorScheme.onPrimary,
                 fontWeight = FontWeight.Normal,
                 style = MaterialTheme.typography.bodyMedium
             )
@@ -108,7 +97,6 @@ fun MenuDrawer(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(0.8f)
                 .verticalScroll(state = scrollState)
         ) {
             screens.forEach { screen ->
@@ -136,4 +124,5 @@ fun DrawerItem(screen: DrawerRoutes, click: (String) -> Unit) {
         onClick = { click(screen.route) },
         modifier = Modifier.fillMaxWidth()
     )
+    Spacer(modifier = Modifier.height(16.dp))
 }
